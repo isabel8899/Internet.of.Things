@@ -24,6 +24,8 @@ Ik begon met deze error weg te halen door een leeg Arduino bestand te openen en 
 Bij het nieuwe bestand bleef de error er staan dus kon ik hieruit concluderen dat het probleem bij de hardware lag. 
 Nadat ik dat wist keek ik opnieuw naar de tutorial en merkte ik dat ik stap 4 en 5 niet perfect had uitgevoert, dus ging ik dat weer opnieuuw bekijken.
 
+###  Failed uploading: uploading error: exit status 2
+fatal error occurred: This chip is ESP8266 not ESP32. Wrong --chip argument?
 
 # Bronnen
 - https://randomnerdtutorials.com/telegram-control-esp32-esp8266-nodemcu-outputs/
