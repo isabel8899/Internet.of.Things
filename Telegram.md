@@ -6,20 +6,26 @@ Ik heb de site: https://www.electromaker.io/project/view/telegram-bot-with-esp82
 Als eerst moet je de app telegram op je telefoon installeren en een account maken.
 
 ## 2: Maak een bot
-Na de het maken van een account moet je je eigen bot installeren. 
+Na de het maken van een account moet je je eigen bot installeren. Dit doe je door BotFather op te zoeken in telegram.
+![Screenshot_20221011-170300_Telegram](https://user-images.githubusercontent.com/95106559/195132059-b6ce6b07-7993-42ac-8aaa-9dd719563f40.jpg)
 
-## 3: Zoek je ID
 
-## 4: Installeer het juiste bord
+Hierin typ je /newbot en volg je de stappen.
+Bewaar je bot token, die ga je later nodig hebben.
+
+## 3: Installeer het juiste bord
 Voordat je kan beginnen is het belangrijk dat je Arduino goed is geinstalleerd door de juiste borden en libraries te hebben. We beginnen bij de borden installeren, voor deze manual heb je het bord esp8266 nodig. 
 Ik had deze al geinstalleerd dus kon ik deze stap overslaan, maar als je dat nog niet hebt gebruik dan de link hieronder.
 
 https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/
 
+## 4: Installeer de juiste libraries
+Na de bord te installeren moet je ook de juiste libraries gebruiken. In de links hieronder zie je 2 githubs repositorys. Download ze beide als zip en voeg ze toe aan je arduino app.
 
-## 5: Installeer de juiste libraries
+https://github.com/CasaJasmina/TelegramBot-Library
+https://github.com/bblanchon/ArduinoJson
 
-## 6: Zet je code in Arduino
+## 5: Zet je code in Arduino
 Hieronder zie je de code die ik had gebruikt om het telegram te koppelen aan mijn arduino. Vergeet niet om in je eigen botcodde en wifi gegevens in te vullen.
 
 Dit ging helaas niet perfect, bij het kopje error, vanaf error 3, merkte je wat er allemaal fout ging bij deze code.
@@ -72,7 +78,7 @@ Dit ging helaas niet perfect, bij het kopje error, vanaf error 3, merkte je wat 
     }  
 ```
 
-## 7: uittesten of het werkt in telegram!
+## 6: uittesten of het werkt in telegram!
 
 # Errors
 ### Error compiling for board NodeMCU 1.0 (ESP-12E Module).
