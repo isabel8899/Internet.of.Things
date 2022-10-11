@@ -2,10 +2,10 @@
 
 ## 1: Installeer telegram
 
-Als eerst moet je de app telegram op je telefoon installeren
+Als eerst moet je de app telegram op je telefoon installeren en een account maken.
 
 ## 2: Maak een bot
-
+Na de het maken van een account moet je je eigen bot installeren. 
 
 ## 3: Zoek je ID
 
@@ -91,6 +91,10 @@ enmaal een nieuwe tutorial begonnen die alleen een ESP8266 chip gebruikt kwam ik
 E![error3](https://user-images.githubusercontent.com/95106559/195110969-ab83bda5-fc43-4d7d-8337-af88c07b9162.jpg)
 
 Deze error kon ik oplossen door bij library mangager mijn arduinoJson bestand te downgraden naar een 5.13.5. Zo werkte de geschreven code namelijk weer wel.
+https://arduinojson.org/v6/error/jsonbuffer-is-a-class-from-arduinojson-5/
+![arduinojson](https://user-images.githubusercontent.com/95106559/195114105-d886c5ac-f5b2-416a-89bc-8d339d0e5343.jpg)
+
+Door de arduinoJson bestand te downgraden naar 5.13.5 verdwenen alle errors gelijk, waardoor nu ik nu wel de code kon uploaden naar mijn arduino.
 
 
 # Bronnen
