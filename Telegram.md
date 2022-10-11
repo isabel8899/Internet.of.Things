@@ -115,3 +115,5 @@ Ik denk zelf dat de error is ontstaan, doordat er een verkeerde led input is en 
 - https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/
 - https://www.electromaker.io/project/view/telegram-bot-with-esp8266-154
 - https://arduinojson.org/v6/error/jsonbuffer-is-a-class-from-arduinojson-5/
+- https://github.com/CasaJasmina/TelegramBot-Library
+- https://github.com/bblanchon/ArduinoJson
