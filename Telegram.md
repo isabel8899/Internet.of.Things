@@ -98,6 +98,11 @@ https://arduinojson.org/v6/error/jsonbuffer-is-a-class-from-arduinojson-5/
 
 Door de arduinoJson bestand te downgraden naar 5.13.5 verdwenen alle errors gelijk, waardoor nu ik nu wel de code kon uploaden naar mijn arduino.
 
+### Telegram doet niks
+Nadat mijn code eindelijk geen errors meer gaf en ik uitteste of telegram werkte gebeurde er helemaal niks. 
+Ik heb de app opnieuw geinstalleerd, alleen werkte dat helaas niet. Ook heb ik de chat opnieuw opgestart.
+Ik denk zelf dat de error is ontstaan, doordat er een verkeerde led input is en er daarom niks veranderd. Dit kan ik helaas niet oplossen in mijn eentje, dus laat ik het hierbij.
+
 
 # Bronnen
 - https://randomnerdtutorials.com/telegram-control-esp32-esp8266-nodemcu-outputs/
