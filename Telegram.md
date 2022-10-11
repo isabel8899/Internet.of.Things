@@ -19,13 +19,14 @@ Als eerst moet je de app telegram op je telefoon installeren
 
 # Errors
 ### Error compiling for board NodeMCU 1.0 (ESP-12E Module).
-Deze error was de eerste error die ik kreeg.
+Deze error was de eerste error die ik kreeg bij het gebruiken van dit stappenplan https://randomnerdtutorials.com/telegram-control-esp32-esp8266-nodemcu-outputs/.
 Ik begon met deze error weg te halen door een leeg Arduino bestand te openen en te uploaden. Om te controleren of het probleem bij de hardware of software zat.
 Bij het nieuwe bestand bleef de error er staan dus kon ik hieruit concluderen dat het probleem bij de hardware lag. 
 Nadat ik dat wist keek ik opnieuw naar de tutorial en merkte ik dat ik stap 4 en 5 niet perfect had uitgevoert, dus ging ik dat weer opnieuuw bekijken.
 
 ###  Failed uploading: uploading error: exit status 2
 fatal error occurred: This chip is ESP8266 not ESP32. Wrong --chip argument?
+Deze error kreeg ik na stap 4 toen ik een esp32 bord had geinstalleerd en de tutorial volgde om te controleren of het wertke. De error spreekt best voorzich, ik had een ESP8266 chip aangesloten ipv een esp32 en voor mijn opdracht heb ik ook geen esp32 chip gekregen, dus kon ik uberhaupt de eerste tutorial niet gebruiken
 
 # Bronnen
 - https://randomnerdtutorials.com/telegram-control-esp32-esp8266-nodemcu-outputs/
