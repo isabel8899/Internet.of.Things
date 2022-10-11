@@ -69,6 +69,7 @@ Dit ging helaas niet perfect, bij het kopje error, vanaf error 3, merkte je wat 
        bot.sendMessage(m.chat_id, "The Led is now OFF");  
      }  
     }  
+```
 
 ## 7: Pas je code aan op je eigen waarden
 
