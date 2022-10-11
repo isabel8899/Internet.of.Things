@@ -1,4 +1,5 @@
 # Stappenplan
+Ik heb de site: https://www.electromaker.io/project/view/telegram-bot-with-esp8266-154 gebruikt voor mijn manual
 
 ## 1: Installeer telegram
 
@@ -92,6 +93,7 @@ E![error3](https://user-images.githubusercontent.com/95106559/195110969-ab83bda5
 
 Deze error kon ik oplossen door bij library mangager mijn arduinoJson bestand te downgraden naar een 5.13.5. Zo werkte de geschreven code namelijk weer wel.
 https://arduinojson.org/v6/error/jsonbuffer-is-a-class-from-arduinojson-5/
+
 ![arduinojson](https://user-images.githubusercontent.com/95106559/195114105-d886c5ac-f5b2-416a-89bc-8d339d0e5343.jpg)
 
 Door de arduinoJson bestand te downgraden naar 5.13.5 verdwenen alle errors gelijk, waardoor nu ik nu wel de code kon uploaden naar mijn arduino.
@@ -99,3 +101,6 @@ Door de arduinoJson bestand te downgraden naar 5.13.5 verdwenen alle errors geli
 
 # Bronnen
 - https://randomnerdtutorials.com/telegram-control-esp32-esp8266-nodemcu-outputs/
+- https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/
+- https://www.electromaker.io/project/view/telegram-bot-with-esp8266-154
+- https://arduinojson.org/v6/error/jsonbuffer-is-a-class-from-arduinojson-5/
