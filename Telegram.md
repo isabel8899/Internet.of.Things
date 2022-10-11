@@ -71,7 +71,7 @@ Dit ging helaas niet perfect, bij het kopje error, vanaf error 3, merkte je wat 
     }  
 ```
 
-## 7: Pas je code aan op je eigen waarden
+## 7: uittesten of het werkt in telegram!
 
 # Errors
 ### Error compiling for board NodeMCU 1.0 (ESP-12E Module).
