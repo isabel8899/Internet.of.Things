@@ -9,7 +9,12 @@ Als eerst moet je de app telegram op je telefoon installeren
 
 ## 3: Zoek je ID
 
-## 4: Installeer de juiste borden
+## 4: Installeer het juiste bord
+Voordat je kan beginnen is het belangrijk dat je Arduino goed is geinstalleerd door de juiste borden en libraries te hebben. We beginnen bij de borden installeren, voor deze manual heb je het bord esp8266 nodig. 
+Ik had deze al geinstalleerd dus kon ik deze stap overslaan, maar als je dat nog niet hebt gebruik dan de link hieronder.
+
+https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/
+
 
 ## 5: Installeer de juiste libraries
 
