@@ -20,6 +20,8 @@ After you've made an new feed in adafruit the first person with the button needs
 
 examples > adafruit io > Adafruitio_20_shared_feed_write
 
+<img width="1034" alt="Schermafbeelding 2022-10-12 om 13 37 54" src="https://user-images.githubusercontent.com/95106559/195336072-074ef456-507b-41ce-a4ee-266c85b74450.png">
+
 
 Here we only had to add:
 
@@ -39,6 +41,9 @@ In config.h:
 And the one without the button went to:
 
 examples > adafruit io > Adafruitio_21_feed_read
+
+<img width="1021" alt="Schermafbeelding 2022-10-12 om 13 36 54" src="https://user-images.githubusercontent.com/95106559/195336042-5b7f0eab-e3bc-4aee-89ed-eb89d30a02cd.png">
+
 
 In Adafruitio_21_feed_read:
 
@@ -65,6 +70,7 @@ The first error we had was when we filled in the exemple file, but nothing happe
 
 ### Upload error
 ![afbeelding](https://user-images.githubusercontent.com/95106559/195335310-6eb8b560-6fc6-48b5-ad13-0a213d561700.png)
+
 The second error we found was easy. First when we read it, we didn't know what went wrong, but as soon as we looked it up, we found out we didn't had the good port selected.
 
 ### signals didn't go to other pc
