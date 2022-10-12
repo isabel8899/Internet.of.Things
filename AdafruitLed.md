@@ -44,7 +44,15 @@ Upload your code and check in the serial monitor if adafruit connects to your wi
 
 ### first error
 De eerste error die ik tegenkwam was bij stap 4. Hier moest ik bij exemples een stukje code aanpassen. Alleen de exemple die ik nodig had, kwam niet naar voren. Als eerst dacht ik dat de fout kwam doordat ik een verouderde versie had gedownload, maar nadat ik een zip had handmatig toegevoegd aan mijn libary, meet een nieuwere versie, werkte het nog steeds niet. Na een klasgenoot te hebben gevraagd bleek dat ik de verkeerd library had gedownload. Eenmaal de juiste gedownload kon ik weer verder.
+
+
+### Wifi error
+I tried to connect the wifi firstly with my phone, quickly I discovered that my hotspot wasen´t working well in connection with my arduino. I tested my arduino on someone elses hotspot and that did work. 
+At home I tried connecting to my own WIFI, witch succeeded, but then when I tried to link the ledstrip to my arduino, my whole computer crased and restarted and when I opened Arduino again it gave this error.
+
 ![afbeelding](https://user-images.githubusercontent.com/95106559/195435687-e33fe70f-fc96-403f-9b3e-747f3069e8cc.png)
+
+I think the error occured because I entered my own Wifi and password in Arduino and my firewall tried to protect it, by shutting the whole system down. So thats when I stopped, because at home I had no availeble wifi options.
 
 
 
