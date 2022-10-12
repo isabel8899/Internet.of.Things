@@ -30,12 +30,18 @@ Safe your key and user name.
 In adafruit create a color picker by going to dashbord and making a new one.
 Then Create a new block in the settings and make in the block a color picker witch a color of choice.
 
-## 4: 
+## 4: Edit code
+Open in arduino the exemple 'Adafruit IO Arduino > Adafruitio_14_neopixel'. After opening the file, add your own username and key from adafruit in the config.h file.
+Also add your WIFI in the config.h file.
+
+Change in the Adafruitio_14_neopixel file the 'Pixel_PIN 5' to 'Pixel_PIN D5'
+
+##
 
 # Error
 
 ### first error
-De eerste error die ik tegenkwam was bij stap 4. Hier moest ik bij exemples een stukje code aanpassen. Alleen de exemple die ik nodig had, kwam niet naar voren. Mij lijkt de fout te zitten in dat ik de verkeerde versie van Adafruit had gedownload. Ik had namelijk 1.0.3 gedownload, wat me een veel te laag lijkt. Op internet ahd ik de volgende github repo gevonden 'https://github.com/adafruit/Adafruit_IO_Arduino'. Deze Zip had ik handmatig toegevoegd aan mijn arduino waardoor 
+De eerste error die ik tegenkwam was bij stap 4. Hier moest ik bij exemples een stukje code aanpassen. Alleen de exemple die ik nodig had, kwam niet naar voren. Als eerst dacht ik dat de fout kwam doordat ik een verouderde versie had gedownload, maar nadat ik een zip had handmatig toegevoegd aan mijn libary, meet een nieuwere versie, werkte het nog steeds niet. Na een klasgenoot te hebben gevraagd bleek dat ik de verkeerd library had gedownload. Eenmaal de juiste gedownload kon ik weer verder.
 
 
 
