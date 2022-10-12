@@ -36,12 +36,15 @@ Also add your WIFI in the config.h file.
 
 Change in the Adafruitio_14_neopixel file the 'Pixel_PIN 5' to 'Pixel_PIN D5'
 
-##
+## Upload code
+Upload your code and check in the serial monitor if adafruit connects to your wifiqq
 
 # Error
 
 ### first error
 De eerste error die ik tegenkwam was bij stap 4. Hier moest ik bij exemples een stukje code aanpassen. Alleen de exemple die ik nodig had, kwam niet naar voren. Als eerst dacht ik dat de fout kwam doordat ik een verouderde versie had gedownload, maar nadat ik een zip had handmatig toegevoegd aan mijn libary, meet een nieuwere versie, werkte het nog steeds niet. Na een klasgenoot te hebben gevraagd bleek dat ik de verkeerd library had gedownload. Eenmaal de juiste gedownload kon ik weer verder.
+![afbeelding](https://user-images.githubusercontent.com/95106559/195435687-e33fe70f-fc96-403f-9b3e-747f3069e8cc.png)
+
 
 
 
