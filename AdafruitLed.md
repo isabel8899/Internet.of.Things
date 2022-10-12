@@ -15,6 +15,8 @@ In this guide I want to change my led lights trough a color picker in Adafruit.
 Search for 'Adafruit IO Arduino' and install the latest version.
 
 ![adafruit library](https://user-images.githubusercontent.com/95106559/195298950-bcf14ce7-a393-414d-9864-18aced9958fd.jpg)
+![afbeelding](https://user-images.githubusercontent.com/95106559/195323470-f88a0d5a-bd13-4b2b-948b-78ac1c5ebb57.png)
+
 
 ## 2: Make an adafruit account
 Go to 'https://io.adafruit.com/' and make an account.
