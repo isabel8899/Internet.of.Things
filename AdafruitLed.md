@@ -9,6 +9,7 @@ In this guide I want to change my led lights trough a color picker in Adafruit.
 ## materials
 - Arduino installed on computer
 - arduino bord
+- ledstrip
 
 # Steps
 ## 1: Install thhe correct library
@@ -37,7 +38,7 @@ Also add your WIFI in the config.h file.
 Change in the Adafruitio_14_neopixel file the 'Pixel_PIN 5' to 'Pixel_PIN D5'
 
 ## Upload code
-Upload your code and check in the serial monitor if adafruit connects to your wifiqq
+Upload your code and check in the serial monitor if adafruit connects to your wifi. If yes then go to adafruit to change the color of your ledstrip
 
 # Error
 
