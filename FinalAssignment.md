@@ -247,6 +247,13 @@ AdafruitIO_Feed *sharedFeed = io.feed("YOUR_FEED_NAME", FEED_OWNER);
 ```
 and add your adafruit feed name
 
+### Step 8: Upload your file to your board
+Now the code is supposed to work and show you:
+
+
+![afbeelding](https://user-images.githubusercontent.com/95106559/198140912-c3ad67ae-6fe1-4836-b18a-e6a29fa5be3f.png)
+this didn't work for me, see at "error with serial monitor" on how I fixed it.
+
 
 # Errors
 
@@ -273,6 +280,8 @@ to have the correct day.
 
 But even after changing this it did work, but the code didn't give me the current time. So i looked up antoher code, witch then worked correctly.
 
+
+### Error with serial monitor
 
 
 ## sources
