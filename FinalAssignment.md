@@ -174,5 +174,5 @@ But even after changing this it did work, but the code didn't give me th elive t
 
 
 ## sources
-- https://www.instructables.com/Minimalist-IoT-Clock-using-ESP8266-Adafruitio-IFTT/ /-------------------------------/delete?
 - https://www.instructables.com/Getting-Time-From-Internet-Using-ESP8266-NTP-Clock/
+- https://randomnerdtutorials.com/esp8266-nodemcu-date-time-ntp-client-server-arduino/
