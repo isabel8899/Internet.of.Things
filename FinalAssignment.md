@@ -11,10 +11,17 @@ In this manual I will walk through on how to
 - Adafruit account 
 
 # Steps
-## 1: 
+## 1: Preparing arduino
+Add lightstrip tp arduino/// fotos enzo
+
+## 2: setup Node MCU
+
+## install libraries
+
 
 # Errors
 
 ### error 1
 
 ## sources
+- https://www.instructables.com/Minimalist-IoT-Clock-using-ESP8266-Adafruitio-IFTT/
