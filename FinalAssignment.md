@@ -18,7 +18,14 @@ Add lightstrip tp arduino/// fotos enzo
 
 ## 2: setup Node MCU
 
-## install libraries
+## 3: install libraries
+Before you can start coding you need to install the correct libraries to make your arduino work. Below you see with libraries you should install.
+    Adafruit NeoPixel library (https://github.com/adafruit/Adafruit_NeoPixel)
+    Arduino http client library (https://github.com/arduino-libraries/ArduinoHttpClient)
+    Arduino IO library (https://github.com/adafruit/Adafruit_IO_Arduino)
+    Adafruit MQTT library (https://github.com/adafruit/Adafruit_MQTT_Library)
+
+## 4: 
 
 
 # Errors
