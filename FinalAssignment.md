@@ -24,48 +24,103 @@ Install the library NTPclient. See the image.
 add the code below in your arduino.
 
 ``` arduino
-#include "NTPClient.h"
-#include "ESP8266WiFi.h"
-#include "WiFiUdp.h"
+#include <ESP8266WiFi.h>
+#include <NTPClient.h>
+#include <WiFiUdp.h>
 
-const char *ssid = "***********";
-const char *password = "***********";
-
-const long utcOffsetInSeconds = 19800;
-
-char daysOfTheWeek[7][12] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+// Replace with your network credentials
+const char *ssid = "********";
+const char *password = "********";
 
 // Define NTP Client to get time
 WiFiUDP ntpUDP;
-NTPClient timeClient(ntpUDP, "pool.ntp.org", utcOffsetInSeconds);
+NTPClient timeClient(ntpUDP, "pool.ntp.org");
 
-void setup(){
-Serial.begin(115200);
+//Week Days
+String weekDays[7]={"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 
-WiFi.begin(ssid, password);
+//Month names
+String months[12]={"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 
-while ( WiFi.status() != WL_CONNECTED ) {
-delay ( 500 );
-Serial.print ( "." );
-}
+void setup() {
+  // Initialize Serial Monitor
+  Serial.begin(115200);
+  
+  // Connect to Wi-Fi
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
 
-timeClient.begin();
+// Initialize a NTPClient to get time
+  timeClient.begin();
+  // Set offset time in seconds to adjust for your timezone, for example:
+  // GMT +1 = 3600
+  // GMT +8 = 28800
+  // GMT -1 = -3600
+  // GMT 0 = 0
+  timeClient.setTimeOffset(7200);
 }
 
 void loop() {
-timeClient.update();
+  timeClient.update();
 
-Serial.print(daysOfTheWeek[timeClient.getDay()]);
-Serial.print(", ");
-Serial.print(timeClient.getHours());
-Serial.print(":");
-Serial.print(timeClient.getMinutes());
-Serial.print(":");
-Serial.println(timeClient.getSeconds());
-//Serial.println(timeClient.getFormattedTime());
+  time_t epochTime = timeClient.getEpochTime();
+  Serial.print("Epoch Time: ");
+  Serial.println(epochTime);
+  
+  String formattedTime = timeClient.getFormattedTime();
+  Serial.print("Formatted Time: ");
+  Serial.println(formattedTime);  
 
-delay(1000);
+  int currentHour = timeClient.getHours();
+  Serial.print("Hour: ");
+  Serial.println(currentHour);  
+
+  int currentMinute = timeClient.getMinutes();
+  Serial.print("Minutes: ");
+  Serial.println(currentMinute); 
+   
+  int currentSecond = timeClient.getSeconds();
+  Serial.print("Seconds: ");
+  Serial.println(currentSecond);  
+
+  String weekDay = weekDays[timeClient.getDay()];
+  Serial.print("Week Day: ");
+  Serial.println(weekDay);    
+
+  //Get a time structure
+  struct tm *ptm = gmtime ((time_t *)&epochTime); 
+
+  int monthDay = ptm->tm_mday;
+  Serial.print("Month day: ");
+  Serial.println(monthDay);
+
+  int currentMonth = ptm->tm_mon+1;
+  Serial.print("Month: ");
+  Serial.println(currentMonth);
+
+  String currentMonthName = months[currentMonth-1];
+  Serial.print("Month name: ");
+  Serial.println(currentMonthName);
+
+  int currentYear = ptm->tm_year+1900;
+  Serial.print("Year: ");
+  Serial.println(currentYear);
+
+  //Print complete date:
+  String currentDate = String(currentYear) + "-" + String(currentMonth) + "-" + String(monthDay);
+  Serial.print("Current date: ");
+  Serial.println(currentDate);
+
+  Serial.println("");
+
+  delay(2000);
 }
+
 ```
 
 ## 3: personalize code
@@ -106,6 +161,8 @@ char daysOfTheWeek[7][12] = {"Saturday", "Sunday", "Monday", "Tuesday", "Wednesd
 ```
 
 to have the correct day.
+
+But even after changing this it did work, but the code didn't give me th elive time. So i looked up antoher code, with then worked correctly.
 
 
 
