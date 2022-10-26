@@ -4,22 +4,23 @@ Isabel Erven
 26 - 10 - 2022
 
 ## Intro
-In this manual I will walk through on how to
+In this manual I will walk through on how to link a google agenda event to your trigger the led light on and off. I did this by furst following the steps on how to get the time from the internet, then I looked up another manual on how to link google agenda to your adafruit and lastly I wanted to link the google event to my led lights, but sadly that didn't work. So you will see in my manual only how to gain the time now and the time of your google agenda event.
 
 ## Materials
-- Arduino IDE 
+- Arduino IDE with esp 8226 fully set up
 - Adafruit account 
+- Zapier account
+- Wi-Fi
 
 # Steps
-serach send time to esp8266 with "adafruit" ----------------------------------- later verwijderen
 
-## 1: Install libraries
+### 1: Install libraries
 
 Install the library NTPclient. See the image.
 
 ![afbeelding](https://user-images.githubusercontent.com/95106559/198037407-4b290359-27aa-40fa-93ac-e3ca16e44082.png)
 
-## 2: Add code
+### 2: Add code
 
 add the code below in your arduino.
 
@@ -123,7 +124,7 @@ void loop() {
 
 ```
 
-## 3: personalize code
+### 3: personalize code
 search for 
 
 const char *ssid = "***********";
@@ -144,7 +145,7 @@ after this you should see the date and time in you serial monitor. See the pictu
 
 ![afbeelding](https://user-images.githubusercontent.com/95106559/198058025-546967a8-b7e4-4ad1-8ad5-aa06a97e06dd.png)
 
-## 4: 
+### 4: 
 
 # Errors
 
