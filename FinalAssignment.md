@@ -186,7 +186,7 @@ Firstly you need to search for Google calendar. There you need to follow the ste
 
 - Under "times before" edit to 16 (first time I didn't do this and then it didn't link correctly! So don't forget)
 
-- And then push test trigger. If you don't see your own upcomming event, then something went wrong. See error .................................................. nog invullen
+- And then push test trigger. If you don't see your own upcomming event, then something went wrong. See error "Error with serial monitor".
 
 ### Step 4: Connect adafruit to Zappier
 After adding Google Calender you need to add adafruit as well.
@@ -282,6 +282,26 @@ But even after changing this it did work, but the code didn't give me the curren
 
 
 ### Error with serial monitor
+When I did the step "Showing a Google agenda event in your arduino"I had multiple errors with my serial monitor. I will walk through them all in here.
+The first one I had was:
+
+![afbeelding](https://user-images.githubusercontent.com/95106559/198141401-b06c3c98-535c-4db8-b10a-bb9b1f7732b4.png)
+
+Here it only showd that my adafruit was connected, but it didn't show my next appointment. Luckily the manual I was working with also had the most common errors lined up.
+
+![afbeelding](https://user-images.githubusercontent.com/95106559/198141634-e39362fd-3f3d-4fe2-8e8e-3c7c7c880ec5.png)
+So I walked throug them all and ended up on redooing everything. So I started at step one again and this time read everything thourough and found out that my error was at step 3. Because when I tested my google calander it showed me an actual appointment I recognized, while the first time it didn't.
+
+So then I hoped it worked, but then the serial monitor showed me nothing. Not even that it's connected to adafruit. See below
+
+
+![afbeelding](https://user-images.githubusercontent.com/95106559/198142279-b9575be1-6399-4401-9289-c25313d0066d.png)
+
+So after playing with my wifi and adafruit. I also tried moving my event in google calander. Then I found out that only if my event was at the exact time that I was also working in my arduino. Only then it would show in my serial monitor. So then i moved my event and it finaly worked!
+
+
+![afbeelding](https://user-images.githubusercontent.com/95106559/198142545-20f79190-79dd-4935-a5f6-265d80f6c996.png)
+I also renamed the event and moved it some more to see if this actually was the sollution. And in the end it was, because renaming or moving the event had no other effects.
 
 
 ## sources
