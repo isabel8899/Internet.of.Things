@@ -139,7 +139,6 @@ search for
 ```
 const char *ssid = "***********";
 const char *password = "***********";
-
 ```
 
 in your code and add your own WIFI credentials
@@ -150,7 +149,6 @@ Also search for
 ```
   timeClient.setTimeOffset(0);
 }
-
 ```
 
 and change the number 0 to your own time zone. You can see in the notes of the code on how to fill in your own timezone.
@@ -180,15 +178,74 @@ You can do this by pressing the "create Zap" button.
 ### Step 3: Connect your google Calander to your account
 Firstly you need to search for Google calendar. There you need to follow the steps on connecting your account to Zappier by:
 
-choosing "event start" under "event"
+- choosing "event start" under "event"
 
-Choose your own Google account
+- Choose your own Google account
 
-Under "calandar" choose one you can edit all the time (this is usefull for later)
+- Under "calandar" choose one you can edit all the time (this is usefull for later)
 
-Under "times before" edit to 16 (first time I didn't do this and then it didn't link correctly! So don't forget)
+- Under "times before" edit to 16 (first time I didn't do this and then it didn't link correctly! So don't forget)
 
-And then push test trigger. If you don't see your own upcomming event, then something went wrong. See error .................................................. nog invullen
+- And then push test trigger. If you don't see your own upcomming event, then something went wrong. See error .................................................. nog invullen
+
+### Step 4: Connect adafruit to Zappier
+After adding Google Calender you need to add adafruit as well.
+You start by searching for "Adafruit IO" and then following the steps
+
+- choosing "Create Feed Data" under "event"
+
+- Then log in with your adafruit account
+
+- then choose the Feed that you created in step 1 under "Feed key"
+
+- Under "Value" add "event begins" and "event end" (NOT the pretty version, that won't work with the upcomming code that we'll use) See picture below on what to choose.
+
+
+![afbeelding](https://user-images.githubusercontent.com/95106559/198139362-8f7805b4-00cc-4b47-ab08-6a1a041f3772.png)
+
+### Step 5: Test Zap
+Press test zap and look in tour Adafruit feed if zappier sended a trigger. It will look like this:
+
+
+![afbeelding](https://user-images.githubusercontent.com/95106559/198139694-68b11c8f-6c1a-4319-89c8-14421f4813da.png)
+
+### Step 6: add the code to your arduino
+Copy and paste the code from this github page to your own arduino:
+https://github.com/SummerDanoe/ReadGoogleCalFeed/tree/master/readfeedtutorial
+(so add the config AND readfeedtutorial)
+
+### Step 7: personalize the code
+in the config.h look for:
+
+```
+#define IO_USERNAME   "YOUR_USERNAME"
+#define IO_KEY        "YOUR_IO_KEY"
+```
+
+and fill in your own adafruit data
+
+also look for
+
+```
+#define WIFI_SSID   "YOUR_SSID"
+#define WIFI_PASS   "YOUR_PASSWORD"
+```
+
+and fill in your own wifi
+
+In the main file look for:
+
+```
+#define FEED_OWNER "YOUR_USERNAME"
+```
+and add your username from your adafruit account
+
+and look for 
+
+```
+AdafruitIO_Feed *sharedFeed = io.feed("YOUR_FEED_NAME", FEED_OWNER);
+```
+and add your adafruit feed name
 
 
 # Errors
@@ -224,3 +281,4 @@ But even after changing this it did work, but the code didn't give me the curren
 - https://io.adafruit.com/
 - https://zapier.com/
 - https://www.instructables.com/Google-Calendar-Events-to-ESP8266/
+- https://github.com/SummerDanoe/ReadGoogleCalFeed/tree/master/readfeedtutorial
