@@ -135,15 +135,23 @@ void loop() {
 ### 3: personalize code
 search for 
 
+
+```
 const char *ssid = "***********";
 const char *password = "***********";
+
+```
 
 in your code and add your own WIFI credentials
 
 Also search for
 
+
+```
   timeClient.setTimeOffset(0);
 }
+
+```
 
 and change the number 0 to your own time zone. You can see in the notes of the code on how to fill in your own timezone.
 
