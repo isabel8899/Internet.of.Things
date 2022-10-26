@@ -254,6 +254,20 @@ Now the code is supposed to work and show you:
 ![afbeelding](https://user-images.githubusercontent.com/95106559/198140912-c3ad67ae-6fe1-4836-b18a-e6a29fa5be3f.png)
 this didn't work for me, see at "error with serial monitor" on how I fixed it.
 
+## Adding the files together
+After I tried to add all codes togheter at once (see error "Playing with combining 3 files") , I did a different approach by doing it step for step.
+
+### Step 1: Minimize what you actually need in time retrieval file
+First I minimized the data I retrieved in my serial monitor. For exemple I didnt need the month or date in my time retrieval. So I deleted the following code:
+
+After I deleted the useless code I added the line:
+
+```
+int timeNow = currentHour*60 + currentMinute + currentSecond%60;
+```
+This is a calculation in the current time in minutes. You will need this later.
+Minimize what you actually need in Event retrieval file
+### Step 2: Minimize what you actually need in event retrieval file
 
 # Errors
 
@@ -302,6 +316,15 @@ So after playing with my wifi and adafruit. I also tried moving my event in goog
 
 ![afbeelding](https://user-images.githubusercontent.com/95106559/198142545-20f79190-79dd-4935-a5f6-265d80f6c996.png)
 I also renamed the event and moved it some more to see if this actually was the sollution. And in the end it was, because renaming or moving the event had no other effects.
+
+### Playing with combining 3 files
+After I succesfully done step 1 "getting the current time" and step 2: "Showing a Google agenda event in your arduino" I added them both together in the same file and also added the file "FirstLight". It ended up on beeing a really big and unorganized file with many errors. For exemple the ones below:
+
+
+![afbeelding](https://user-images.githubusercontent.com/95106559/198144056-072d6186-3665-40c9-b95a-9338df3a1651.png)
+
+I wanted to solve the errors, but I knew once I solve 1, 5 more will come up. That was because my file was so unorganized and chaotic. So I scraped that idea and started again, but then adding only codes that I wrote and understand.
+
 
 
 ## sources
