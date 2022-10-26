@@ -133,9 +133,16 @@ in your code and add your own WIFI credentials
 
 Also search for
 
-const long utcOffsetInSeconds = 19800;
+  timeClient.setTimeOffset(0);
+}
 
-and change the number to your own time zone. You can calculate this by "*time right now* x 60 x 60 = correct number"
+and change the number 0 to your own time zone. see in the code how.
+
+
+after this you should see the date and time in you serial monitor. See the picture below
+
+
+![afbeelding](https://user-images.githubusercontent.com/95106559/198058025-546967a8-b7e4-4ad1-8ad5-aa06a97e06dd.png)
 
 ## 4: 
 
