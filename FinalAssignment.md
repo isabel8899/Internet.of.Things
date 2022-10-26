@@ -258,17 +258,210 @@ this didn't work for me, see at "error with serial monitor" on how I fixed it.
 After I tried to add all codes togheter at once (see error "Playing with combining 3 files") , I did a different approach by doing it step for step.
 
 ### Step 1: Minimize what you actually need in time retrieval file
-First I minimized the data I retrieved in my serial monitor. For exemple I didnt need the month or date in my time retrieval. So I deleted the following code:
+First I minimized the data I retrieved in my serial monitor. For exemple I didnt need the month or date in my time retrieval. So I deleted all the serial prints. See picture on how they looked.
 
-After I deleted the useless code I added the line:
+![afbeelding](https://user-images.githubusercontent.com/95106559/198146347-01b88d10-24dd-4206-a4c5-98b87cf14864.png)
+
+!!! Make sure after you deleted code in your file, to always check if there are no new errors. Do this frequently so you know exactly were it went wrong.
+
+After that I added the code:
 
 ```
 int timeNow = currentHour*60 + currentMinute + currentSecond%60;
 ```
-This is a calculation in the current time in minutes. You will need this later.
-Minimize what you actually need in Event retrieval file
-### Step 2: Minimize what you actually need in event retrieval file
 
+This is a calculation on  the current time in minutes. You will need this later.
+
+### Step 2: Minimize what you actually need in event retrieval file
+In the event retrieval file I deleted the serial prints. See pictures
+
+![afbeelding](https://user-images.githubusercontent.com/95106559/198145935-55977214-327a-46cb-b0c8-b7e706e2a552.png)
+![afbeelding](https://user-images.githubusercontent.com/95106559/198145957-451ea183-f23f-4bf9-af30-a2648cdaf54f.png)
+
+Here also, check frequently for errors!
+
+### step 3: Print only the usefull variabels
+After minimizing both of your files, print in your serial monitor only the values that you'll actually use.
+
+ So in this case that's "timeNow" in the time retrieval file and "startTime" in the event retrieval file.
+ 
+I did this by adding the codes:
+
+```
+Serial.println(timeNow);  
+```
+
+```
+Serial.print(startTime);
+```
+
+Then you should see those variables in your serial monitor
+
+### step 4: Combine the 2 files
+This step is also can get very hard if you don't look closely on were to add your code or what you can leave behind. But if you add only the code needed and did the steps before without any errors then this step will be easy.
+
+For this step you need to combine the event retrieval and time retrieval file. Start by adding everything before void setup(), then check for errors. The everything in the void setup(), then check for errors, then everything in the void loop()
+
+If everything goes correctly your code should look like this: 
+
+```
+#include "config.h"
+
+//time details
+#include <ESP8266WiFi.h>
+#include <NTPClient.h>
+#include <WiFiUdp.h>
+
+
+// the Adafruit IO username of whomever owns the feed
+#define FEED_OWNER "isabel8899"
+
+// set up the `sharedFeed`
+AdafruitIO_Feed *sharedFeed = io.feed("calendar", FEED_OWNER);
+
+//details time
+// Define NTP Client to get time
+WiFiUDP ntpUDP;
+NTPClient timeClient(ntpUDP, "pool.ntp.org");
+
+//Week Days
+String weekDays[7]={"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+
+//Month names
+String months[12]={"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+
+void setup() {
+  
+  // start the serial connection
+  Serial.begin(115200);
+
+  // wait for serial monitor to open
+  while(! Serial);
+
+  // connect to io.adafruit.com
+  Serial.println("Connecting to Adafruit IO");
+  io.connect();
+
+
+  // set up a message handler for the 'sharedFeed' feed.
+  // the handleMessage function (defined below)
+  // will be called whenever a message is
+  // received from adafruit io.
+  sharedFeed->onMessage(handleMessage);
+
+  // wait for a connection
+  while(io.status() < AIO_CONNECTED) {
+    Serial.println(".");
+    delay(500);
+  }
+
+  // we are connected
+  Serial.println();
+  Serial.println(io.statusText());
+  sharedFeed->get();
+
+// Initialize a NTPClient to get time
+  timeClient.begin();
+  // Set offset time in seconds to adjust for your timezone, for example:
+  // GMT +1 = 3600
+  // GMT +8 = 28800
+  // GMT -1 = -3600
+  // GMT 0 = 0
+  timeClient.setTimeOffset(7200);
+
+}
+
+void loop() {
+
+  // io.run(); is required for all sketches.
+  // it should always be present at the top of your loop
+  // function. it keeps the client connected to
+  // io.adafruit.com, and processes any incoming data.
+  io.run();
+
+}
+
+  // this function is called whenever an 'sharedFeed' feed message
+  // is received from Adafruit IO. it was attached to
+  // the 'digital' feed in the setup() function above.
+void handleMessage(AdafruitIO_Data *data) {
+  
+  //Turn the feed message into a string
+ String answer = data->toString();
+ //Serial.println("Raw asnwer " + answer);
+ 
+ //Turn the string into usable data
+   //date
+   String date = answer.substring(0,10);
+   //starting time
+   String startHourString = answer.substring(11,13);
+   int startHour = startHourString.toInt();
+ 
+   String startMinuteString = answer.substring(14,16);
+   int startMinute = startMinuteString.toInt();
+
+   //ending time
+   String endHourString = answer.substring(36,38);
+   int endHour = endHourString.toInt();
+  
+   String endMinuteString = answer.substring(39,41);
+   int endMinute = endMinuteString.toInt();
+
+//details for time now
+     timeClient.update();
+  int currentHour = timeClient.getHours();
+  int currentMinute = timeClient.getMinutes();
+  int currentSecond = timeClient.getSeconds();
+
+ //Print results in serial monitor
+ Serial.println("");
+  
+
+ //You can use the data to calculate all sorts of things
+  
+ //Calculate duration (doesn't work at midnight)
+ int startTime = startHour*60 + startMinute; //starting time in minutes of the day
+int timeNow = currentHour*60 + currentMinute + currentSecond%60;
+
+if (startTime < timeNow) {
+Serial.println("het werkt!");  
+}
+
+Serial.println(timeNow);  
+Serial.print(startTime);
+
+
+} 
+```
+
+and will give tthis in the serial monitor:
+
+
+![afbeelding](https://user-images.githubusercontent.com/95106559/198148895-d63084bb-7990-45d0-8cae-e5844aca3833.png) 
+(but then with different values, since we're not doing this at the same time/with the same event)
+
+
+## Step 5: Create if else statement
+This for me was the hardest step and the one I didn't get any furter with.
+I started my if else statement and got many error because I placed my "{" wrong or sa=tated a false statement. See the errors below:
+
+![afbeelding](https://user-images.githubusercontent.com/95106559/198147757-0e634648-0124-49e5-bfd3-291ee28cda27.png)
+![afbeelding](https://user-images.githubusercontent.com/95106559/198147795-7599887f-5f78-4e66-9a6b-06350205ac67.png)
+
+
+After struggling for a wgile I came up with this statement:
+```
+if (startTime < timeNow) {
+Serial.println("het werkt!");  
+} else { 
+}
+```
+
+this statement should work and was a easy test for it. But when I opened my serial monitor again it didn't show anything.
+So after placing the if-else statement on other places and looking if my event was correcly timed. I gave up.
+
+My plan was to write an if else statement, that when the value "timeNow" bigger was or the same as the value "startTime" then the led would go on. Else it wouldn't be on, but sadly I din't get to that part :( and it would have taken me a while for that to also work :s
+ 
 # Errors
 
 ### wrong timezone
