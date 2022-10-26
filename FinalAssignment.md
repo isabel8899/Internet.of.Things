@@ -252,17 +252,18 @@ Now the code is supposed to work and show you:
 
 
 ![afbeelding](https://user-images.githubusercontent.com/95106559/198140912-c3ad67ae-6fe1-4836-b18a-e6a29fa5be3f.png)
+
 this didn't work for me, see at "error with serial monitor" on how I fixed it.
 
 ## Adding the files together
-After I tried to add all codes togheter at once (see error "Playing with combining 3 files") , I did a different approach by doing it step for step.
+I tried to add all codes together at once (see error "Playing with combining 3 files"), but that didn't work. So I did a different approach by doing it step for step.
 
 ### Step 1: Minimize what you actually need in time retrieval file
 First I minimized the data I retrieved in my serial monitor. For exemple I didnt need the month or date in my time retrieval. So I deleted all the serial prints. See picture on how they looked.
 
 ![afbeelding](https://user-images.githubusercontent.com/95106559/198146347-01b88d10-24dd-4206-a4c5-98b87cf14864.png)
 
-!!! Make sure after you deleted code in your file, to always check if there are no new errors. Do this frequently so you know exactly were it went wrong.
+!!! Make sure that after you delete code in your file, to always check if there are no new errors. Do this frequently so you know exactly were it went wrong.
 
 After that I added the code:
 
@@ -442,7 +443,7 @@ and will give tthis in the serial monitor:
 
 
 ## Step 5: Create if else statement
-This for me was the hardest step and the one I didn't get any furter with.
+This for me was the hardest step and the one I didn't get any furter with it.
 I started my if else statement and got many error because I placed my "{" wrong or sa=tated a false statement. See the errors below:
 
 ![afbeelding](https://user-images.githubusercontent.com/95106559/198147757-0e634648-0124-49e5-bfd3-291ee28cda27.png)
