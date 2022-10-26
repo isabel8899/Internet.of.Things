@@ -1,4 +1,4 @@
-# Steps for sending signals through Adafruit
+# Steps for using Google agenda to trigger your arduino
 Isabel Erven 
 
 26 - 10 - 2022
@@ -183,3 +183,5 @@ But even after changing this it did work, but the code didn't give me the curren
 ## sources
 - https://www.instructables.com/Getting-Time-From-Internet-Using-ESP8266-NTP-Clock/
 - https://randomnerdtutorials.com/esp8266-nodemcu-date-time-ntp-client-server-arduino/
+- https://io.adafruit.com/
+- https://zapier.com/
