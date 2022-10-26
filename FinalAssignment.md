@@ -160,6 +160,36 @@ after this you should see the date and time in you serial monitor. See the pictu
 
 ![afbeelding](https://user-images.githubusercontent.com/95106559/198058025-546967a8-b7e4-4ad1-8ad5-aa06a97e06dd.png)
 
+## Showing a Google agenda event in your arduino
+For the second big step I made a new arduino file and followed a tutorial on how to show your upcomming Google agenda event in your arduino serial monitor.
+
+I used this manual: https://www.instructables.com/Google-Calendar-Events-to-ESP8266/
+
+### Step 1: Create a New feed in your adafruit account
+you can do this by going to "IO > Feeds > New Feeds 
+
+
+![afbeelding](https://user-images.githubusercontent.com/95106559/198136362-d48d4d8e-b292-412d-a5a7-1360b4338496.png)
+
+### Step 2: Make a new Zap
+You can do this by pressing the "create Zap" button.
+
+
+![afbeelding](https://user-images.githubusercontent.com/95106559/198136861-2409239e-2127-4281-9dab-fc500021c460.png)
+
+### Step 3: Connect your google Calander to your account
+Firstly you need to search for Google calendar. There you need to follow the steps on connecting your account to Zappier by:
+
+choosing "event start" under "event"
+
+Choose your own Google account
+
+Under "calandar" choose one you can edit all the time (this is usefull for later)
+
+Under "times before" edit to 16 (first time I didn't do this and then it didn't link correctly! So don't forget)
+
+And then push test trigger. If you don't see your own upcomming event, then something went wrong. See error .................................................. nog invullen
+
 
 # Errors
 
@@ -193,3 +223,4 @@ But even after changing this it did work, but the code didn't give me the curren
 - https://randomnerdtutorials.com/esp8266-nodemcu-date-time-ntp-client-server-arduino/
 - https://io.adafruit.com/
 - https://zapier.com/
+- https://www.instructables.com/Google-Calendar-Events-to-ESP8266/
