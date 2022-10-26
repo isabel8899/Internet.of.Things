@@ -4,7 +4,7 @@ Isabel Erven
 26 - 10 - 2022
 
 ## Intro
-In this manual I will walk through on how to link a google agenda event to your trigger the led light on and off. I did this by furst following the steps on how to get the time from the internet, then I looked up another manual on how to link google agenda to your adafruit and lastly I wanted to link the google event to my led lights, but sadly that didn't work. So you will see in my manual only how to gain the time now and the time of your google agenda event.
+In this manual I will walk through on how to link a google agenda event to your trigger the led light on and off. I did this by first following the steps on how to get the time from the internet, then I looked up another manual on how to link google agenda to your adafruit and lastly I wanted to link the google event to my led lights, but sadly that didn't work. So you will see in my manual only how to gain the time now and the time of your google agenda event.
 
 ## Materials
 - Arduino IDE with esp 8226 fully set up
@@ -14,13 +14,21 @@ In this manual I will walk through on how to link a google agenda event to your 
 
 # Steps
 
+## Getting the current time
+As I said in the intro, the first thing I did was getting the current time. I started with the manual below:
+https://www.instructables.com/Getting-Time-From-Internet-Using-ESP8266-NTP-Clock/
+But after I did all the steps, I found out it didn't get the actual current time. You had to fill it in yourself and then it started counting. (See the first error for more explination) 
+The manual above wasn't what I was looking for. So then I used another manual:
+https://randomnerdtutorials.com/esp8266-nodemcu-date-time-ntp-client-server-arduino/
+Below you see the steps I did, to get the actual current time.
+
 ### 1: Install libraries
 
 Install the library NTPclient. See the image.
 
 ![afbeelding](https://user-images.githubusercontent.com/95106559/198037407-4b290359-27aa-40fa-93ac-e3ca16e44082.png)
 
-### 2: Add code
+### 2: Add the code in arduino
 
 add the code below in your arduino.
 
@@ -63,7 +71,7 @@ void setup() {
   // GMT +8 = 28800
   // GMT -1 = -3600
   // GMT 0 = 0
-  timeClient.setTimeOffset(7200);
+  timeClient.setTimeOffset(0);
 }
 
 void loop() {
@@ -137,21 +145,19 @@ Also search for
   timeClient.setTimeOffset(0);
 }
 
-and change the number 0 to your own time zone. see in the code how.
-
+and change the number 0 to your own time zone. You can see in the notes of the code on how to fill in your own timezone.
 
 after this you should see the date and time in you serial monitor. See the picture below
 
 
 ![afbeelding](https://user-images.githubusercontent.com/95106559/198058025-546967a8-b7e4-4ad1-8ad5-aa06a97e06dd.png)
 
-### 4: 
 
 # Errors
 
 ### wrong timezone
 
-The first error I got was that my serial monitor didn't gave me the correct day and time. As you can see in the picture below.
+The first error I got was when I tried to get the current time with the first source. The error was that my serial monitor didn't gave me the correct day and time. As you can see in the picture below.
 
 
 ![afbeelding](https://user-images.githubusercontent.com/95106559/198044269-c3735647-5d0e-491b-8a65-abf2cfdd0659.png)
@@ -170,7 +176,7 @@ char daysOfTheWeek[7][12] = {"Saturday", "Sunday", "Monday", "Tuesday", "Wednesd
 
 to have the correct day.
 
-But even after changing this it did work, but the code didn't give me th elive time. So i looked up antoher code, with then worked correctly.
+But even after changing this it did work, but the code didn't give me the current time. So i looked up antoher code, witch then worked correctly.
 
 
 
