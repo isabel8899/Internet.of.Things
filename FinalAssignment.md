@@ -16,6 +16,7 @@ serach send time to esp8266 with "adafruit" ----------------------------------- 
 ## 1: Install libraries
 
 Install the library NTPclient. See the image.
+
 ![afbeelding](https://user-images.githubusercontent.com/95106559/198037407-4b290359-27aa-40fa-93ac-e3ca16e44082.png)
 
 ## 2: Add code
@@ -79,7 +80,7 @@ Also search for
 
 const long utcOffsetInSeconds = 19800;
 
-and change the number to your own time zone. You can calculate this by --------------------nog geen idee hoe, later opzoeken maybe gwn minus twee uur... kijken of dat werkt
+and change the number to your own time zone. You can calculate this by "*time right now* x 60 x 60 = correct number"
 
 ## 4: 
 
@@ -87,9 +88,25 @@ and change the number to your own time zone. You can calculate this by ---------
 
 ### wrong timezone
 
-The first error I got was that my serial monitor didn't gave me the correct day and time. I already thought that would happen, because in the tutori
+The first error I got was that my serial monitor didn't gave me the correct day and time. As you can see in the picture below.
+
 
 ![afbeelding](https://user-images.githubusercontent.com/95106559/198044269-c3735647-5d0e-491b-8a65-abf2cfdd0659.png)
+
+I already thought that would happen, because in the tutorial it said to change the number that was given, first i didn't understood how, but after playing with the numbers I figured out that you needed to use your own time at that moment for the number and that in the code I needed to change 
+
+```
+char daysOfTheWeek[7][12] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+```
+
+to 
+
+```
+char daysOfTheWeek[7][12] = {"Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
+```
+
+to have the correct day.
+
 
 
 ## sources
