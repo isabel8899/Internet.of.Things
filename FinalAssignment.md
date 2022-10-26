@@ -11,6 +11,8 @@ In this manual I will walk through on how to
 - Adafruit account 
 
 # Steps
+serach send time to esp8266 with "adafruit" -- later verwijderen
+
 ## 1: Preparing arduino
 Add lightstrip tp arduino/// fotos enzo
 
